@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+        }
+        #container {
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #000;
+            background-color: #fff;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        a:hover {
+            background-color: #ddd;
+        }
+        .code {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #0f0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Result Page</h1>
+        <div class="code">Scanned Code: {{ code }}</div>
+        <div id="details">
+            <a href="/personal.html?code={{ code }}">View Personal Details</a>
+            <a href="/professional.html?code={{ code }}">View Professional Details</a>
+            <a href="/com.html?code={{ code }}">Raise a compliant  </a>
+
+        </div>
+    </div>
+</body>
+</html>

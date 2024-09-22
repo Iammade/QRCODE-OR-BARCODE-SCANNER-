@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Details</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+        }
+        #container {
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        table {
+            width: 50%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            color: #fff;
+            margin: auto;
+        }
+        th, td {
+            border: 1px solid #fff;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #333;
+        }
+        .date {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Professional Details</h1>
+        {% if student %}
+        <table>
+            <tr>
+                <th>Field</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>{{ student.name }}</td>
+            </tr>
+            <tr>
+                <td>Course</td>
+                <td>{{ student.course }}</td>
+            </tr>
+            <tr>
+                <td>Department</td>
+                <td>{{ student.department }}</td>
+            </tr>
+            <tr>
+                <td>USN</td>
+                <td>{{ student.usn }}</td>
+            </tr>
+            <tr>
+                <td>Phone No</td>
+                <td>{{ student.phone_no }}</td>
+            </tr>
+            <tr>
+                <td>Currentsemester</td>
+                <td>{{ student.Currentsemester }}</td>
+            </tr>
+            
+            <tr>
+                <td>cgpa</td>
+                <td>{{ student.cgpa }}</td>
+            </tr>
+            <tr>
+                <td>internship</td>
+                <td>{{ student.internship }}</td>
+            </tr>
+            <tr>
+                <td>mini project</td>
+                <td>{{ student.miniproject }}</td>
+            </tr>
+            <tr>
+                <td>Joing date</td>
+                <td>{{ student.Joingdate }}</td>
+            </tr>
+            <tr>
+                <td>proctor</td>
+                <td>{{ student.proctor }}</td>
+            </tr>
+            <tr>
+                <td>proctor email_id</td>
+                <td>{{ student.proctoremail }}</td>
+            </tr>
+        </table>
+        <div id="date" class="date">
+            Expiry Date: {{ student.expiry_date }}
+        </div>
+        {% else %}
+        <div class="details">
+            No professional details found for the scanned code.
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

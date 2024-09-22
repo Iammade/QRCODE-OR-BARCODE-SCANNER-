@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .details {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Student Details</h1>
+        <div class="details">
+            {% if student %}
+                <p>Name: {{ student.name }}</p>
+                <p>Course: {{ student.course }}</p>
+                <p>Department: {{ student.department }}</p>
+                <p>USN: {{ student.usn }}</p>
+                <p>Blood Group: {{ student.blood_group }}</p>
+                <p>Phone No: {{ student.phone_no }}</p>
+                <p>PP No: {{ student.pp_no }}</p>
+                <p>Address: {{ student.address }}</p>
+                <p>Expiry Date: {{ student.expiry_date }}</p>
+            {% else %}
+                <p>No student details found for the scanned code.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
