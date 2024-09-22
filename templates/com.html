@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raise a Complaint</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000000;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            color: white;
+            text-align: center;
+            background-color: #010101;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 500px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .date {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #ccc;
+        }
+        .te {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: #00aaff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0088cc;
+        }
+        .complaint {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .complaint p {
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #222;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Raise a Complaint</h1>
+        <form action="/submit" method="POST">
+            <textarea name="complaint" class="te" placeholder="Enter your complaint here..."></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        
+    </div>
+</body>
+</html>
