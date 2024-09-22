@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR and Barcode Scanner</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+        }
+        #container {
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        video {
+            width: 100%;
+            max-width: 600px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: scan-animation 1.5s infinite alternate;
+        }
+        @keyframes scan-animation {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(10px); }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>QR and Barcode Scanner</h1>
+        <video id="preview"></video>
+    </div>
+    <script src="https://unpkg.com/@zxing/library@latest"></script>
+    <script>
+        window.addEventListener('load', function() {
+            const codeReader = new ZXing.BrowserMultiFormatReader();
+            const videoElement = document.getElementById('preview');
+
+            console.log('Starting QR and Barcode reader...');
+            codeReader.decodeFromVideoDevice(null, videoElement, (result, err) => {
+                if (result) {
+                    console.log('Scanned Code:', result.text);
+
+                    // Handle the scanned result
+                    const validUSNs = [
+                        // enter the usn here
+                    ];
+
+                    if (validUSNs.includes(result.text)) {
+                        window.location.href = `/result_page.html?code=${result.text}`;
+                    } else {
+                        alert('Invalid code.');
+                    }
+                }
+                if (err) {
+                    console.error('Error scanning code:', err);
+                }
+            }).catch(err => {
+                console.error('Error starting code reader:', err);
+            });
+        });
+    </script>
+</body>
+</html>
